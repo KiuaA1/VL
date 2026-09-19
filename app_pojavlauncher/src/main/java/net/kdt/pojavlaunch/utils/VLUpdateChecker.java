@@ -2,7 +2,6 @@ package net.kdt.pojavlaunch.utils;
 
 import android.util.Log;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -107,34 +106,11 @@ public final class VLUpdateChecker {
         }
     }
 
-    public static final class UpdateInfo {
-        public final boolean updateAvailable;
-        public final String latestTag;
-        public final String releaseUrl;
-        public final String apkUrl;
-        public final String body;
-
-        public UpdateInfo(boolean updateAvailable, String latestTag, String releaseUrl, String apkUrl, String body) {
-            this.updateAvailable = updateAvailable;
-            this.latestTag = latestTag;
-            this.releaseUrl = releaseUrl;
-            this.apkUrl = apkUrl;
-            this.body = body;
-        }
-
-        public static UpdateInfo none() {
-            return new UpdateInfo(false, null, null, null, null);
-        }
-    }
-
-    private static final String TAG = "VLUpdateChecker";
-
     private static String safeVersion(String v) {
         if (v == null) return "0";
         return v.trim().replaceFirst("^[vV]", "");
     }
 
-    /** Simple dotted numeric compare: 1.2.3 > 1.2.0 */
     private static boolean isNewer(String latest, String current) {
         try {
             String[] la = latest.split("[^0-9]+");
