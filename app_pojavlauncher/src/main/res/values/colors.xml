@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Control buttons -->
     <color name="control_button_color">#4CC4C4C4</color>
     <color name="control_button_pressed_color">#4D000000</color>
 
-    <!-- X-style core colors -->
-    <color name="background_app">#000000</color>               <!-- Pure black -->
-    <color name="background_status_bar">#000000</color>
-    <color name="background_bottom_bar">#000000</color>
-    <color name="background_overlay">#16181C</color>           <!-- Slightly elevated black -->
-    <color name="background_card">#16181C</color>              <!-- Cards / Dynamic Island -->
-    <color name="divider">#2F3336</color>
+    <!-- Oryn / CS+ style dark surface -->
+    <color name="background_app">#0B0D10</color>
+    <color name="background_status_bar">#0B0D10</color>
+    <color name="background_bottom_bar">#0B0D10</color>
+    <color name="background_overlay">#14181F</color>
+    <color name="background_card">#161B22</color>
+    <color name="background_card_elevated">#1C222B</color>
+    <color name="divider">#2A313C</color>
 
-    <!-- Accent (X blue) -->
-    <color name="accent_blue">#1D9BF0</color>
-    <color name="accent_blue_pressed">#1A8CD8</color>
-    <color name="minebutton_color">#1D9BF0</color>
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_blue_pressed">#2563EB</color>
+    <color name="accent_glow">#1A3B82F6</color>
+    <color name="minebutton_color">#3B82F6</color>
 
-    <!-- Text -->
-    <color name="primary_text">#E7E9EA</color>
-    <color name="secondary_text">#71767B</color>
-    <color name="icon_outline_color">#E7E9EA</color>
+    <color name="primary_text">#F3F4F6</color>
+    <color name="secondary_text">#9CA3AF</color>
+    <color name="muted_text">#6B7280</color>
+    <color name="icon_outline_color">#F3F4F6</color>
 
-    <!-- Extra useful colors for later -->
-    <color name="danger_red">#F4212E</color>
-    <color name="success_green">#00BA7C</color>
+    <color name="danger_red">#EF4444</color>
+    <color name="success_green">#22C55E</color>
+    <color name="warning_amber">#F59E0B</color>
 </resources>
