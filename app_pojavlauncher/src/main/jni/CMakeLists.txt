@@ -1,6 +1,10 @@
 
 cmake_minimum_required(VERSION 3.22.1)
 
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+add_compile_options($<$<COMPILE_LANGUAGE:C>:-include> $<$<COMPILE_LANGUAGE:C>:stdbool.h>)
+
 # ------ MojoExec ------
 
 add_subdirectory(mojoexec)
