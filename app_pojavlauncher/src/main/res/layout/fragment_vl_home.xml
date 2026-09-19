@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vl_home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="16dp">
+
+    <!-- ==================== TOP BAR ==================== -->
+
+    <!-- Dynamic Island (top center) + optional Yes/No actions -->
+    <LinearLayout
+        android:id="@+id/dynamic_island"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="180dp"
+        android:minHeight="36dp"
+        android:background="@drawable/bg_dynamic_island"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:elevation="6dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <TextView
+            android:id="@+id/dynamic_island_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VL"
+            android:textColor="@color/primary_text"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.02"
+            android:maxLines="2"
+            android:gravity="center"
+            android:ellipsize="end"/>
+
+        <LinearLayout
+            android:id="@+id/dynamic_island_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/island_yes_button"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_vl_button_success"
+                android:text="Yes"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/island_no_button"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_vl_button_danger"
+                android:text="No"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Account button (top right) -->
+    <ImageButton
+        android:id="@+id/account_button"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_circle_dark"
+        android:src="@drawable/ic_px_person"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:contentDescription="Account"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/primary_text"/>
+
+    <!-- Store -->
+    <ImageButton
+        android:id="@+id/store_button"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_circle_dark"
+        android:src="@drawable/ic_px_file_dl"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:contentDescription="Store"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/mouse_button"
+        app:tint="@color/primary_text"/>
+
+    <!-- Mouse settings -->
+    <ImageButton
+        android:id="@+id/mouse_button"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_circle_dark"
+        android:src="@drawable/ic_px_mouse"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:contentDescription="Mouse"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/settings_button"
+        app:tint="@color/primary_text"/>
+
+    <!-- Settings gear (next to account) -->
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_circle_dark"
+        android:src="@drawable/ic_px_sliders"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:contentDescription="Settings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/account_button"
+        app:tint="@color/primary_text"/>
+
+    <!-- ==================== CENTER - SKIN PAPER ==================== -->
+
+    <FrameLayout
+        android:id="@+id/skin_paper_container"
+        android:layout_width="120dp"
+        android:layout_height="240dp"
+        android:background="@drawable/bg_skin_paper"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/dynamic_island"
+        app:layout_constraintBottom_toTopOf="@id/instances_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.35">
+
+        <ImageView
+            android:id="@+id/skin_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:paddingBottom="28dp"
+            android:src="@drawable/ic_px_person"
+            android:contentDescription="Player Skin"/>
+
+        <TextView
+            android:id="@+id/skin_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#CC000000"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:text="Skin"
+            android:textColor="@color/primary_text"
+            android:textSize="12sp"/>
+    </FrameLayout>
+
+    <!-- Empty state when no instances -->
+    <LinearLayout
+        android:id="@+id/empty_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/add_instance_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No instances yet"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Tap  +  below to create one"
+            android:textColor="@color/secondary_text"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Long-press a card later to reorder"
+            android:textColor="@color/secondary_text"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- ==================== INSTANCE CARDS (horizontal) ==================== -->
+
+    
+    <EditText
+        android:id="@+id/instance_search"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_vl_field"
+        android:hint="Search instances"
+        android:textColorHint="@color/secondary_text"
+        android:textColor="@color/primary_text"
+        android:paddingHorizontal="14dp"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@id/instances_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+<HorizontalScrollView
+        android:id="@+id/instances_scroll"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintBottom_toTopOf="@id/add_instance_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/instances_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"/>
+    </HorizontalScrollView>
+
+    <!-- ==================== BOTTOM + BUTTON ==================== -->
+
+    <ImageButton
+        android:id="@+id/add_instance_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_add_button"
+        android:src="@android:drawable/ic_input_add"
+        android:scaleType="centerInside"
+        android:padding="16dp"
+        android:elevation="10dp"
+        android:contentDescription="Add Instance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#FFFFFF"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

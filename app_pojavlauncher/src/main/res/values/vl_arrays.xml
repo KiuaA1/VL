@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="vl_font_entries">
+        <item>Default (system)</item>
+        <item>Sans-serif</item>
+        <item>Sans-serif light</item>
+        <item>Sans-serif medium</item>
+        <item>Sans-serif condensed</item>
+        <item>Serif</item>
+        <item>Monospace</item>
+        <item>Cursive</item>
+    </string-array>
+    <string-array name="vl_font_values">
+        <item>default</item>
+        <item>sans-serif</item>
+        <item>sans-serif-light</item>
+        <item>sans-serif-medium</item>
+        <item>sans-serif-condensed</item>
+        <item>serif</item>
+        <item>monospace</item>
+        <item>cursive</item>
+    </string-array>
+
+    <string-array name="vl_island_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Extra large</item>
+    </string-array>
+    <string-array name="vl_island_size_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+        <item>xlarge</item>
+    </string-array>
+</resources>

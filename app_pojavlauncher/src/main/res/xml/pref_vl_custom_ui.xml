@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <net.kdt.pojavlaunch.prefs.BackButtonPreference/>
+
+    <PreferenceCategory android:title="Theme colors">
+
+        <Preference
+            android:key="vl_color_background"
+            android:title="Background color"
+            android:summary="Main launcher background"/>
+
+        <Preference
+            android:key="vl_color_accent"
+            android:title="Accent / button color"
+            android:summary="Play button, + button, highlights"/>
+
+        <Preference
+            android:key="vl_color_card"
+            android:title="Card color"
+            android:summary="Dynamic Island and instance cards"/>
+
+        <Preference
+            android:key="vl_color_text"
+            android:title="Primary text color"
+            android:summary="Main text color"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Font">
+
+        <ListPreference
+            android:key="vl_font_family"
+            android:title="Custom font"
+            android:summary="System fonts only (as on your phone)"
+            android:defaultValue="default"
+            android:entries="@array/vl_font_entries"
+            android:entryValues="@array/vl_font_values"/>
+
+    </PreferenceCategory>
+
+    
+    <PreferenceCategory android:title="Dynamic Island">
+
+        <ListPreference
+            android:key="vl_island_size"
+            android:title="Island size"
+            android:summary="Height of the top Dynamic Island"
+            android:defaultValue="medium"
+            android:entries="@array/vl_island_size_entries"
+            android:entryValues="@array/vl_island_size_values"/>
+
+    </PreferenceCategory>
+
+    
+    <PreferenceCategory android:title="Updates">
+
+        <SwitchPreference
+            android:key="vl_check_updates"
+            android:title="Check for updates"
+            android:summary="Check GitHub releases and show status in Dynamic Island"
+            android:defaultValue="true"/>
+
+        <EditTextPreference
+            android:key="vl_github_owner"
+            android:title="GitHub owner"
+            android:summary="Repository owner for updates"
+            android:defaultValue="kiua"/>
+
+        <EditTextPreference
+            android:key="vl_github_repo"
+            android:title="GitHub repo"
+            android:summary="Repository name for updates"
+            android:defaultValue="VL"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Options">
+
+        <SwitchPreference
+            android:key="vl_custom_ui_enabled"
+            android:title="Enable custom colors"
+            android:summary="Apply your colors to the VL home screen"
+            android:defaultValue="false"/>
+
+        <Preference
+            android:key="vl_reset_colors"
+            android:title="Reset to default"
+            android:summary="Restore original X black + blue theme"/>
+
+        <Preference
+            android:key="vl_clear_cache"
+            android:title="Clear image cache"
+            android:summary="Clear cached icons and temporary skin images"/>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

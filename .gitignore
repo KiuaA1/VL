@@ -1,0 +1,10 @@
+**/build/
+.gradle/
+local.properties
+*.jks
+.idea/
+*.iml
+.DS_Store
+.cxx/
+.externalNativeBuild/
+curseforge_key.txt

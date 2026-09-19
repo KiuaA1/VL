@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="16dp">
+
+    <ImageButton
+        android:id="@+id/mouse_back"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_circle_dark"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/primary_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mouse"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/mouse_back"
+        app:layout_constraintBottom_toBottomOf="@id/mouse_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/mouse_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Cursor look -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="CURSOR LOOK"
+                android:textColor="@color/secondary_text" android:textSize="12sp"
+                android:letterSpacing="0.06" android:layout_marginBottom="8dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Cursor style" android:textColor="@color/primary_text" android:textSize="14sp"/>
+            <Spinner
+                android:id="@+id/mouse_cursor_style"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_vl_field"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Cursor scale" android:textColor="@color/secondary_text" android:textSize="12sp"/>
+            <TextView android:id="@+id/mouse_scale_value" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="100%"
+                android:textColor="@color/primary_text" android:textSize="14sp"/>
+            <SeekBar android:id="@+id/mouse_scale_seek"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="300" android:progress="100"/>
+
+            <!-- Movement -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="MOVEMENT"
+                android:textColor="@color/secondary_text" android:textSize="12sp"
+                android:letterSpacing="0.06" android:layout_marginBottom="8dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Mouse speed" android:textColor="@color/secondary_text" android:textSize="12sp"/>
+            <TextView android:id="@+id/mouse_speed_value" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="100%"
+                android:textColor="@color/primary_text" android:textSize="14sp"/>
+            <SeekBar android:id="@+id/mouse_speed_seek"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="300" android:progress="100"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Long-press delay (ms)" android:textColor="@color/secondary_text" android:textSize="12sp"/>
+            <TextView android:id="@+id/mouse_longpress_value" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="300 ms"
+                android:textColor="@color/primary_text" android:textSize="14sp"/>
+            <SeekBar android:id="@+id/mouse_longpress_seek"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="1000" android:progress="300"/>
+
+            <!-- Behavior -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="BEHAVIOR"
+                android:textColor="@color/secondary_text" android:textSize="12sp"
+                android:letterSpacing="0.06" android:layout_marginBottom="4dp"/>
+
+            <Switch android:id="@+id/mouse_virtual_start"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="Start with virtual mouse"
+                android:textColor="@color/primary_text"/>
+
+            <Switch android:id="@+id/mouse_disable_swap"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="Disable double-tap swap hand"
+                android:textColor="@color/primary_text"/>
+
+            <Switch android:id="@+id/mouse_disable_gestures"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="Disable gestures"
+                android:textColor="@color/primary_text"/>
+
+            <Switch android:id="@+id/mouse_invert_x"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="Invert horizontal look (gyro X)"
+                android:textColor="@color/primary_text"/>
+
+            <Switch android:id="@+id/mouse_invert_y"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="Invert vertical look (gyro Y)"
+                android:textColor="@color/primary_text"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="CUSTOM CURSOR"
+                android:textColor="@color/secondary_text" android:textSize="12sp"
+                android:letterSpacing="0.06" android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/mouse_import_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_vl_button_primary"
+                android:text="Import cursor image (PNG)"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/mouse_clear_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_circle_dark"
+                android:text="Clear custom cursor"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"/>
+
+            <TextView android:id="@+id/mouse_cursor_status"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Using built-in style"
+                android:textColor="@color/secondary_text" android:textSize="12sp"/>
+
+            Cursor style applies next time the game starts. Scale &amp; speed apply immediately."
+                android:textColor="@color/secondary_text" android:textSize="12sp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Control buttons -->
+    <color name="control_button_color">#4CC4C4C4</color>
+    <color name="control_button_pressed_color">#4D000000</color>
+
+    <!-- X-style core colors -->
+    <color name="background_app">#000000</color>               <!-- Pure black -->
+    <color name="background_status_bar">#000000</color>
+    <color name="background_bottom_bar">#000000</color>
+    <color name="background_overlay">#16181C</color>           <!-- Slightly elevated black -->
+    <color name="background_card">#16181C</color>              <!-- Cards / Dynamic Island -->
+    <color name="divider">#2F3336</color>
+
+    <!-- Accent (X blue) -->
+    <color name="accent_blue">#1D9BF0</color>
+    <color name="accent_blue_pressed">#1A8CD8</color>
+    <color name="minebutton_color">#1D9BF0</color>
+
+    <!-- Text -->
+    <color name="primary_text">#E7E9EA</color>
+    <color name="secondary_text">#71767B</color>
+    <color name="icon_outline_color">#E7E9EA</color>
+
+    <!-- Extra useful colors for later -->
+    <color name="danger_red">#F4212E</color>
+    <color name="success_green">#00BA7C</color>
+</resources>

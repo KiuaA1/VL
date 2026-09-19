@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_app"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/content_back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_dark"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:padding="10dp"
+            app:tint="@color/primary_text"/>
+        <TextView
+            android:id="@+id/content_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Content"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <ImageButton
+            android:id="@+id/content_open_folder"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_dark"
+            android:src="@drawable/ic_px_folder"
+            android:padding="10dp"
+            app:tint="@color/primary_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/content_tab_mods"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_vl_button_primary"
+            android:text="Mods"
+            android:textAllCaps="false"
+            android:textColor="#FFF"/>
+        <Button
+            android:id="@+id/content_tab_rp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_circle_dark"
+            android:text="Resource packs"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_text"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tap = enable/disable · Long-press = delete"
+        android:textColor="@color/secondary_text"
+        android:textSize="12sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp">
+        <Button
+            android:id="@+id/content_enable_all"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_vl_button_success"
+            android:text="Enable all"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="12sp"/>
+        <Button
+            android:id="@+id/content_disable_all"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_vl_button_danger"
+            android:text="Disable all"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/content_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:divider="#2F3336"
+        android:dividerHeight="1dp"/>
+
+    <Button
+        android:id="@+id/content_check_deps"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_vl_field"
+        android:text="Check mod dependencies"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_text"/>
+
+    <Button
+        android:id="@+id/content_store"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_vl_button_primary"
+        android:text="Open Store"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textStyle="bold"/>
+</LinearLayout>
