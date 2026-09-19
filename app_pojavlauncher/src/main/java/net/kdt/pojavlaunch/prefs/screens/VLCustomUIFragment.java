@@ -200,4 +200,18 @@ public class VLCustomUIFragment extends PreferenceFragmentCompat {
             return android.graphics.Typeface.DEFAULT;
         }
     }
+
+    private static void deleteRecursive(java.io.File fileOrDirectory) {
+        if (fileOrDirectory == null || !fileOrDirectory.exists()) return;
+        if (fileOrDirectory.isDirectory()) {
+            java.io.File[] children = fileOrDirectory.listFiles();
+            if (children != null) {
+                for (java.io.File child : children) {
+                    deleteRecursive(child);
+                }
+            }
+        }
+        //noinspection ResultOfMethodCallIgnored
+        fileOrDirectory.delete();
+    }
 }
