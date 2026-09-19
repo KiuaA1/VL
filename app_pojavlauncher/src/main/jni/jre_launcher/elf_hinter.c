@@ -15,6 +15,7 @@
 
 #define TAG __FILE_NAME__
 #include <log.h>
+#include <stdbool.h>
 
 static bool inner_hinter_process(void** popstack, int* stack_top, const char* lib_name);
 
