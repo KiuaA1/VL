@@ -65,6 +65,15 @@ jobs:
           sed -i 's/return "justicia-/return "VL-/g' app_pojavlauncher/build.gradle || true
           sed -i 's/return "LOCAL-/return "VL-/g' app_pojavlauncher/build.gradle || true
 
+      - name: Force C11 stdbool for native build
+        run: |
+          # Mojo C sources use bool without always including stdbool.h
+          CMAKE="$PWD/app_pojavlauncher/src/main/jni/CMakeLists.txt"
+          if ! grep -q 'CMAKE_C_STANDARD' "$CMAKE"; then
+            sed -i '1a set(CMAKE_C_STANDARD 11)\nset(CMAKE_C_STANDARD_REQUIRED ON)\nadd_compile_options($<$<COMPILE_LANGUAGE:C>:-include> $<$<COMPILE_LANGUAGE:C>:stdbool.h>)' "$CMAKE"
+          fi
+          head -15 "$CMAKE"
+
       - name: Build debug APK
         run: |
           chmod +x gradlew
