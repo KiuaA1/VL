@@ -1,74 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Dynamic Island style instance card -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/instance_card_root"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="72dp"
-    android:minWidth="200dp"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
+    android:layout_marginBottom="10dp"
     android:background="@drawable/bg_instance_card"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
     android:paddingStart="12dp"
-    android:paddingEnd="8dp"
-    android:elevation="4dp"
+    android:paddingEnd="10dp"
+    android:elevation="2dp"
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Left: three dots (profile settings) -->
-    <ImageButton
-        android:id="@+id/instance_more_button"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_more_horiz"
-        android:scaleType="centerInside"
-        android:contentDescription="Instance settings"
-        app:tint="@color/primary_text"/>
+    <!-- Favorite star -->
+    <TextView
+        android:id="@+id/instance_favorite"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:text="★"
+        android:textColor="@color/muted_text"
+        android:textSize="16sp"
+        android:visibility="gone"/>
 
-    <!-- Center: Play button -->
-    <ImageButton
-        android:id="@+id/instance_play_button"
+    <ImageView
+        android:id="@+id/instance_image"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginHorizontal="8dp"
-        android:background="@drawable/bg_play_circle"
-        android:src="@android:drawable/ic_media_play"
-        android:scaleType="centerInside"
-        android:padding="10dp"
-        android:contentDescription="Play"
-        app:tint="#FFFFFF"/>
+        android:layout_marginStart="4dp"
+        android:background="@drawable/bg_circle_dark"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_px_java_run"
+        android:contentDescription="Instance icon"/>
 
-    <!-- Right: Instance image + name -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingEnd="4dp">
-
-        <ImageView
-            android:id="@+id/instance_image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/bg_circle_dark"
-            android:src="@drawable/ic_px_java_run"
-            android:contentDescription="Instance icon"/>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/instance_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:maxWidth="110dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="Instance"
             android:textColor="@color/primary_text"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/instance_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
             android:maxLines="1"
-            android:ellipsize="end"/>
+            android:text="Ready to play"
+            android:textColor="@color/secondary_text"
+            android:textSize="12sp"/>
     </LinearLayout>
 
+    <!-- Play (center emphasis) -->
+    <ImageButton
+        android:id="@+id/instance_play"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_vl_button_primary"
+        android:contentDescription="Play"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_px_java_run"
+        app:tint="#FFFFFF"/>
+
+    <!-- More -->
+    <ImageButton
+        android:id="@+id/instance_more"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="More"
+        android:padding="8dp"
+        android:src="@drawable/ic_more_horiz"
+        app:tint="@color/secondary_text"/>
 </LinearLayout>
