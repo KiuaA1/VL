@@ -22,7 +22,7 @@ import net.kdt.pojavlaunch.prefs.LauncherPreferences;
  */
 public class GameCursorView extends View implements PlatformCursorImplementor {
     private final Paint customCursorPaint = new Paint();
-    private final Drawable cursorDrawable;
+    private Drawable cursorDrawable;
     private boolean noDraw = false;
     private float mouseScale = 1f;
 
