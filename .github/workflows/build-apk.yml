@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
 
     steps:
       - name: Checkout
@@ -44,12 +44,21 @@ jobs:
           "$SM" --sdk_root="$SDKROOT" "platforms;android-36" "build-tools;35.0.0" "platform-tools" "ndk;27.0.12077973" "cmake;3.22.1"
           echo "sdk.dir=$SDKROOT" > local.properties
 
-      - name: Ensure native modules
+      - name: Setup native modules and jni symlinks
         run: |
-          if [ ! -d glfw/jni_bindings ]; then git clone --depth 1 https://github.com/MojoLauncher/glfw.git glfw; fi
-          if [ ! -d sdl/jni_bindings ]; then git clone --depth 1 https://github.com/MojoLauncher/MojoSDL.git sdl; fi
-          if [ ! -d mojoexec/jni_bindings ]; then git clone --depth 1 https://github.com/MojoLauncher/mojoexec.git mojoexec; fi
+          set -e
+          # Full native trees required by CMakeLists under jni/
+          rm -rf glfw && git clone --depth 1 https://github.com/MojoLauncher/glfw.git glfw
+          rm -rf mojoexec && git clone --depth 1 https://github.com/MojoLauncher/mojoexec.git mojoexec
+          rm -rf sdl && git clone --depth 1 https://github.com/MojoLauncher/MojoSDL.git sdl
           find . -name build.gradle -print0 | xargs -0 sed -i 's/ndkVersion "29.0.14206865"/ndkVersion "27.0.12077973"/g' || true
+          # Symlinks expected by app_pojavlauncher/src/main/jni/CMakeLists.txt
+          JNI=app_pojavlauncher/src/main/jni
+          rm -rf "$JNI/glfw" "$JNI/sdl" "$JNI/mojoexec"
+          ln -s ../../../../glfw "$JNI/glfw"
+          ln -s ../../../../sdl "$JNI/sdl"
+          ln -s ../../../../mojoexec "$JNI/mojoexec"
+          ls -la "$JNI"
 
       - name: Patch version name
         run: |
